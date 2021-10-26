@@ -28,7 +28,7 @@ public class Controlador{
      * Metodo que permite agregar el objeto Channel a la estación del clima y al modelo.
      * @param clima Objeto de tipo Channel.
      * @param estacionClima Objeto de tipo EstacionClima.
-     * @param modelo Objeto de tipo Modelo2.
+     * @param modelo Objeto de tipo Modelo.
      */
     public void agregarClima(Channel clima, EstacionClima estacionClima, Modelo modelo){
         estacionClima.agregar(clima);
@@ -41,7 +41,7 @@ public class Controlador{
      * @param historial Objeto de JList que almacena Channels
      * @param estacionClima Objeto de tipo EstacionClima.
      */
-    public void eliminarHistorial(Modelo2 modelo, JList historial, EstacionClima estacionClima){
+    public void eliminarHistorial(Modelo modelo, JList historial, EstacionClima estacionClima){
         modelo.eliminarTodo();
         historial.clearSelection();
         estacionClima.eliminarTodo();
@@ -59,7 +59,7 @@ public class Controlador{
 
     /**
      * Metodo que ordena las listas de la estación del clima y el modelo por tempereatura.
-     * @param modelo Objeto de tipo Modelo2.
+     * @param modelo Objeto de tipo Modelo.
      * @param estacionClima Objeto de tipo Estación del clima.
      */
     public void ordenarPorTemperatura(Modelo modelo, EstacionClima estacionClima){
@@ -129,7 +129,7 @@ public class Controlador{
      * @param event Objeto de tipo ActionEvent.
      * @param modelo Objeto de tipo Modelo.
      */
-    public void accionOrdenarListaTemperatura(ActionEvent event, Modelo2 modelo){
+    public void accionOrdenarListaTemperatura(ActionEvent event, Modelo modelo){
         modelo.ordenarTemperatura();
         System.out.println("Ordenado por Temperatura");
     }
