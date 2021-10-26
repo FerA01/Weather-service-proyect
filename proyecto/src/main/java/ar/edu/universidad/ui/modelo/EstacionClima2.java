@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * Fernando Andana
  * Clase estación del clima que sera usado para ser "observado".
  */
-public class EstacionClima2 extends Observable {
+public class EstacionClima extends Observable {
     /**
      * Atributo de tipo List que contendra los climas.
      */
@@ -72,6 +72,10 @@ public class EstacionClima2 extends Observable {
     private void setCity(City city) { this.city = city; }
 
     //Metodos.
+    /**
+    * Metodo que devuelve la cantidad de elementos de la colección.
+    */
+    public int tamanio(){ return  getRegistroClimas().size(); }
 
     /**
      * Metodo que agregar el clima pasado por parametro al atributo climaActual y a la lista que contiene el historial
