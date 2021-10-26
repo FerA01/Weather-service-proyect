@@ -28,12 +28,12 @@ public class EstacionClima extends Observable {
     /**
      * Constructor vacio
      */
-    public EstacionClima2(){ setRegistroClimas(new ArrayList<>()); }
-    public EstacionClima2(List<Channel> registroClimas){
+    public EstacionClima(){ setRegistroClimas(new ArrayList<>()); }
+    public EstacionClima(List<Channel> registroClimas){
         setRegistroClimas(registroClimas);
         setRegistroClimas(new ArrayList<>());
     }
-    public EstacionClima2(City city){ setRegistroClimas(new ArrayList<>()); setCity(city); }
+    public EstacionClima(City city){ setRegistroClimas(new ArrayList<>()); setCity(city); }
 
     /**
      * Getter del atributo registroClimas.
