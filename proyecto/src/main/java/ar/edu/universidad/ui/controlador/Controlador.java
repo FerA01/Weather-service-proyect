@@ -1,7 +1,7 @@
 package ar.edu.unnoba.ui.controlador;
 import ar.edu.unnoba.model.Channel;
-import ar.edu.unnoba.ui.modelo.EstacionClima2;
-import ar.edu.unnoba.ui.modelo.Modelo2;
+import ar.edu.unnoba.ui.modelo.EstacionClima;
+import ar.edu.unnoba.ui.modelo.Modelo;
 import ar.edu.unnoba.ui.vista.PanelBase;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -27,21 +27,21 @@ public class Controlador{
     /**
      * Metodo que permite agregar el objeto Channel a la estación del clima y al modelo.
      * @param clima Objeto de tipo Channel.
-     * @param estacionClima Objeto de tipo EstacionClima2.
+     * @param estacionClima Objeto de tipo EstacionClima.
      * @param modelo Objeto de tipo Modelo2.
      */
-    public void agregarClima(Channel clima, EstacionClima2 estacionClima, Modelo2 modelo){
+    public void agregarClima(Channel clima, EstacionClima estacionClima, Modelo modelo){
         estacionClima.agregar(clima);
         modelo.agregar(clima);
     }
 
     /**
      * Metodo que vacia las listas que contiene la estacion del clima y el modelo.
-     * @param modelo Objeto de tipo Modelo2.
+     * @param modelo Objeto de tipo Modelo.
      * @param historial Objeto de JList que almacena Channels
-     * @param estacionClima Objeto de tipo EstacionClima2.
+     * @param estacionClima Objeto de tipo EstacionClima.
      */
-    public void eliminarHistorial(Modelo2 modelo, JList historial, EstacionClima2 estacionClima){
+    public void eliminarHistorial(Modelo2 modelo, JList historial, EstacionClima estacionClima){
         modelo.eliminarTodo();
         historial.clearSelection();
         estacionClima.eliminarTodo();
@@ -49,10 +49,10 @@ public class Controlador{
 
     /**
      * Metodo que ordena las listas de la estación del clima y el modelo por fecha.
-     * @param modelo Objeto de tipo Modelo2.
-     * @param estacionClima Objeto de tipo EstacionClima2.
+     * @param modelo Objeto de tipo Modelo.
+     * @param estacionClima Objeto de tipo EstacionClima.
      */
-    public void ordenarPorFecha(Modelo2 modelo, EstacionClima2 estacionClima){
+    public void ordenarPorFecha(Modelo modelo, EstacionClima estacionClima){
         modelo.ordenarFecha();
         estacionClima.ordenarPorFecha();
     }
@@ -62,7 +62,7 @@ public class Controlador{
      * @param modelo Objeto de tipo Modelo2.
      * @param estacionClima Objeto de tipo Estación del clima.
      */
-    public void ordenarPorTemperatura(Modelo2 modelo, EstacionClima2 estacionClima){
+    public void ordenarPorTemperatura(Modelo modelo, EstacionClima estacionClima){
         modelo.ordenarTemperatura();
         estacionClima.ordenarPorTemperatura();
     }
@@ -104,15 +104,15 @@ public class Controlador{
      * La función principal es vaciar las listas de la estacion del clima y del modelo, además de eliminar la imagén
      * y el texto de 2 JLabel.
      * @param evento Objeto de tipo ActionEvent
-     * @param modelo Objeto de tipo Modelo2.
-     * @param estacionClima Objeto de tipo EstacionClima2.
+     * @param modelo Objeto de tipo Modelo.
+     * @param estacionClima Objeto de tipo EstacionClima.
      * @param historial Objeto de tipo JList que almacena Channels.
      * @param fotoClima Objeto de tipo JLabel, se elimina la imagen que contiene.
      * @param etiquetaInformacionClimaActual Objeto de tipo JLabel, se deja la etiqueta vacía.
      */
     public void accionLimpiarHistorial(ActionEvent evento,
-                                       Modelo2 modelo,
-                                       EstacionClima2 estacionClima,
+                                       Modelo modelo,
+                                       EstacionClima estacionClima,
                                        JList historial,
                                        JLabel fotoClima,
                                        JLabel etiquetaInformacionClimaActual){
@@ -127,7 +127,7 @@ public class Controlador{
     /**
      * Metodo que ordena la lista del modelo por la temperatura.
      * @param event Objeto de tipo ActionEvent.
-     * @param modelo Objeto de tipo Modelo2.
+     * @param modelo Objeto de tipo Modelo.
      */
     public void accionOrdenarListaTemperatura(ActionEvent event, Modelo2 modelo){
         modelo.ordenarTemperatura();
@@ -136,9 +136,9 @@ public class Controlador{
     /**
      * Metodo que ordena la lista del modelo por la fecha.
      * @param event Objeto de tipo ActionEvent.
-     * @param modelo Objeto de tipo Modelo2.
+     * @param modelo Objeto de tipo Modelo.
      */
-    public void accionOrdenarListaFecha(ActionEvent event, Modelo2 modelo){
+    public void accionOrdenarListaFecha(ActionEvent event, Modelo modelo){
         modelo.ordenarFecha();
         System.out.println("Ordenado por fecha");
     }
@@ -234,10 +234,10 @@ public class Controlador{
     /**
      * Metodo que lanza una ventana emergente cuando se da 2 clicks en un elemento del JList.
      * @param historial Objeto de tipo JList.
-     * @param modelo Objeto de tipo Modelo2.
+     * @param modelo Objeto de tipo Modelo.
      */
     public void lanzarVentanaEmergenteFrame2(  JList<Channel> historial,
-                                               Modelo2 modelo){
+                                               Modelo modelo){
         int seleccionado = historial.getSelectedIndex();
         Channel channel = modelo.getElementAt(seleccionado);
 
