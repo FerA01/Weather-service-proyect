@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * Fernando Andana
  * Clase usada para la logica del JList
  */
-public class Modelo2 extends AbstractListModel implements ListModel{
+public class Modelo extends AbstractListModel implements ListModel{
     /**
      * Atributo List de tipo Channel
      */
@@ -27,8 +27,8 @@ public class Modelo2 extends AbstractListModel implements ListModel{
     /**
      * Constructor
      */
-    public Modelo2(){}
-    public Modelo2(List<Channel> elementos){getElementos().addAll(elementos);}
+    public Modelo(){}
+    public Modelo(List<Channel> elementos){ getElementos().addAll(elementos); }
 
     /**
      * Getter de la lista elementos.
