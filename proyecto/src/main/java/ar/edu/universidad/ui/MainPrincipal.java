@@ -3,7 +3,7 @@ import ar.edu.unnoba.model.Channel;
 import ar.edu.unnoba.model.City;
 import ar.edu.unnoba.service.WeatherService;
 import ar.edu.unnoba.ui.controlador.Controlador;
-import ar.edu.unnoba.ui.modelo.EstacionClima2;
+import ar.edu.unnoba.ui.modelo.EstacionClima;
 import ar.edu.unnoba.ui.modelo.Etiqueta;
 import ar.edu.unnoba.ui.modelo.ListaHistorialClima;
 import ar.edu.unnoba.ui.modelo.Modelo2;
@@ -45,7 +45,7 @@ public class MainPrincipal extends Panel implements Observer {
     /**
      * Atributo de tipo EstacionClima2
      */
-    private EstacionClima2 estacionClima= new EstacionClima2();
+    private EstacionClima estacionClima= new EstacionClima();
 
     /**
      *Atributo de tipo Controlador
@@ -240,8 +240,8 @@ public class MainPrincipal extends Panel implements Observer {
      */
     public void accionBotonLimpiarHistorial(ActionEvent actionEvent){
         getControlador().accionLimpiarHistorial(actionEvent, getModelo2(), getEstacionClima(), getHistorial()
-                                                , getImagenClimaActual()
-                                                , getInformacionClimaActual()
+                                                ,getImagenClimaActual()
+                                                ,getInformacionClimaActual()
         );
     }
 
@@ -261,7 +261,7 @@ public class MainPrincipal extends Panel implements Observer {
 
         System.out.println(canal);
         System.out.println(CANTIDADMODELO + getModelo2().getSize());
-        System.out.println(CANTIDADESTACION + getEstacionClima().getRegistroClimas().size());
+        System.out.println(CANTIDADESTACION + getEstacionClima().tamanio());
     }
 
     /**
